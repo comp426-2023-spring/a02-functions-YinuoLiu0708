@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import minimist from 'minimist';
-var cmd = minimist(process.argv.slice(2));
-
 import moment from 'moment-timezone';
+import fetch from 'node-fetch';
 
+const cmd = minimist(process.argv.slice(2));
 var help = cmd.h || false;
 var latitude = cmd.n || -cmd.s || 38.875;
 var longitude = cmd.e || -cmd.w || -79;
