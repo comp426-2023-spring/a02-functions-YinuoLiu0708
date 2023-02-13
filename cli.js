@@ -12,7 +12,7 @@ var timezone = cmd.z || moment.tz.guess();
 var day = (cmd.d !== undefined) ? cmd.d : 1;
 var json = cmd.j || false;
 
-var URL = 'https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=weathercode,precipitation_hours&timezone=' + timezone;
+var URL = 'https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&current_weather=true&timezone=' + timezone;
 const response = await fetch(URL);
 const data = await response.json();
 
