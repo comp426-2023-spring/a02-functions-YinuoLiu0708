@@ -6,8 +6,8 @@ import fetch from 'node-fetch';
 
 const cmd = minimist(process.argv.slice(2));
 var help = cmd.h || false;
-var latitude = cmd.n || -cmd.s || 35;
-var longitude = cmd.e || -cmd.w || -79;
+var latitude = cmd.n || cmd.s * -1;
+var longitude = cmd.e || cmd.w * -1;
 var timezone = cmd.z || moment.tz.guess();
 var day = (cmd.d !== undefined) ? cmd.d : 1;
 var json = cmd.j || false;
